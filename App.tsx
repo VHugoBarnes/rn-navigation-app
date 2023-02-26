@@ -1,14 +1,12 @@
 import React from "react";
-import { SafeAreaView, StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { StackNavigator } from "./src/navigator/StackNavigator.component";
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar
-        backgroundColor="black"
-        barStyle="light-content"
-      />
-    </SafeAreaView>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 };
 
