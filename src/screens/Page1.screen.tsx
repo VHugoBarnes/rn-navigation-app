@@ -1,12 +1,40 @@
+import { StackScreenProps } from "@react-navigation/stack";
 import React from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, SafeAreaView } from "react-native";
+import GeneralStyles from "../styles/GeneralStyles.component";
 
-export const Page1 = () => {
+interface Props extends StackScreenProps<any, any> { }
+
+export const Page1 = ({ navigation }: Props) => {
   return (
-    <View>
-      <Text>
-        Page1.screen
+    <SafeAreaView>
+      <Text style={[GeneralStyles.title]}>
+        Page #1
       </Text>
-    </View>
+
+      <Pressable
+        onPress={() => navigation.navigate("Page2")}
+      >
+        <Text>
+          Ir a pagina 2
+        </Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => navigation.navigate("Page3", { id: 1, name: "" })}
+      >
+        <Text>
+          Ir a pagina 3
+        </Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => navigation.navigate("Page4")}
+      >
+        <Text>
+          Ir a pagina 4
+        </Text>
+      </Pressable>
+    </SafeAreaView>
   );
 };
