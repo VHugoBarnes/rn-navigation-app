@@ -65,7 +65,6 @@ export const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={InternalMenu}
-
     >
       <Drawer.Screen name="Tab" component={Tab} />
     </Drawer.Navigator>
